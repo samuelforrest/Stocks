@@ -21,7 +21,7 @@ export default function StockListItem({stock}: StockListItem) {
   const change = Number.parseFloat(stock.percent_change);
 
   return ( //We may only have one item in the return tag - the view / pressable view
-    <Link href={"/stock"} asChild>
+    <Link href={"/" + stock.symbol} asChild>
       <Pressable style={styles.container}>
         
         {/*Left Container*/}
