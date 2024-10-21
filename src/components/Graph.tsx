@@ -6,7 +6,7 @@ import timeseries from "@/assets/data/timeseries.json"
 
 const Graph = () => {
   
-  const graphPoints: GraphPoint[] = timeseries.values.map((value) => 
+  const points: GraphPoint[] = timeseries.values.map((value) => 
     ({date: new Date(value.datetime),
       value: Number.parseFloat(value.close),
   }));
@@ -17,7 +17,7 @@ const Graph = () => {
 
       <LineGraph
         style={{ width: "100%", height: 300 }}
-        points={graphPoints}
+        points={points}
         animated={false} color={Colors.light.tint}
       />
 
