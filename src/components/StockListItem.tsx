@@ -5,10 +5,10 @@ import Colors from "../constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
 
 type Stock = {
-  name: String;
-  symbol: String;
-  close: String;
-  percent_change: String;
+  name: string;
+  symbol: string;
+  close: string;
+  percent_change: string;
 }
 
 type StockListItem = {
@@ -27,7 +27,7 @@ export default function StockListItem({stock}: StockListItem) {
       
       {/*Right Container*/}
       <View style={{ alignItems: "flex-end" }}>
-        <MonoText>{stock.close}</MonoText>
+        <MonoText>{Number.parseFloat(stock.close).toFixed(1)}</MonoText>
         <MonoText>{stock.percent_change}</MonoText>
       </View>
 
