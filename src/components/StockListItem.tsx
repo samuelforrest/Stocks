@@ -16,9 +16,19 @@ type StockListItem = {
 
 export default function StockListItem({stock}: StockListItem) {
   return ( //We may only have one item in the return tag - the view
-    <View style={styles.container}> 
-      <Text style={styles.symbol}>{stock.symbol} <AntDesign name="staro" size={18} color="gray" /></Text>
-      <Text style={{color: "gray"}}>{stock.name}</Text>
+    <View style={styles.container}>
+      
+      {/*Left Container*/}
+      <View>
+        <Text style={styles.symbol}>{stock.symbol} <AntDesign name="staro" size={18} color="gray" /></Text>
+        <Text style={{color: "gray"}}>{stock.name}</Text>
+      </View>
+      
+      {/*Right Container*/}
+      <View>
+        <Text>{stock.close}</Text>
+        <Text>{stock.percent_change}</Text>
+      </View>
     </View>
   )
 }
