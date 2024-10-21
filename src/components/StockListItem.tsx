@@ -1,4 +1,5 @@
 import {Text, View} from "./Themed";
+import {MonoText} from "./StyledText";
 import {StyleSheet} from "react-native";
 import Colors from "../constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -19,23 +20,24 @@ export default function StockListItem({stock}: StockListItem) {
     <View style={styles.container}>
       
       {/*Left Container*/}
-      <View>
+      <View style={{ flex:1 }}>
         <Text style={styles.symbol}>{stock.symbol} <AntDesign name="staro" size={18} color="gray" /></Text>
         <Text style={{color: "gray"}}>{stock.name}</Text>
       </View>
       
       {/*Right Container*/}
-      <View>
-        <Text>{stock.close}</Text>
-        <Text>{stock.percent_change}</Text>
+      <View style={{ alignItems: "flex-end" }}>
+        <MonoText>{stock.close}</MonoText>
+        <MonoText>{stock.percent_change}</MonoText>
       </View>
+
     </View>
   )
 }
 
 const styles = StyleSheet.create ({
   container: {
-
+    flexDirection: "row",
   },
   symbol: {
     fontSize: 20,
