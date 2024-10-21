@@ -18,7 +18,9 @@ const Graph = () => {
       <LineGraph
         style={{ width: "100%", height: 300 }}
         points={points}
-        animated={false} color={Colors.light.tint}
+        animated={true} 
+        color={Colors.light.tint}
+        gradientFillColors={["#fff", "#008000"]} //change in for Colors.light.tint when working
       />
 
     </View>
