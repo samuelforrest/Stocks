@@ -1,7 +1,7 @@
 {
-  "IBM": { //Object
+  "IBM": { 
     "symbol": "IBM",
-    "name": "International Business Machines Corp", //Full name of stock
+    "name": "International Business Machines Corp",
     "exchange": "NYSE",
     "mic_code": "XNYS",
     "currency": "USD",
