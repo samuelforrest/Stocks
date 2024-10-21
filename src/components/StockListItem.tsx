@@ -16,6 +16,9 @@ type StockListItem = {
 }
 
 export default function StockListItem({stock}: StockListItem) {
+
+  const change = Number.parseFloat(stock.percent_change);
+
   return ( //We may only have one item in the return tag - the view
     <View style={styles.container}>
       
@@ -27,8 +30,8 @@ export default function StockListItem({stock}: StockListItem) {
       
       {/*Right Container*/}
       <View style={{ alignItems: "flex-end" }}>
-        <MonoText>{Number.parseFloat(stock.close).toFixed(1)}</MonoText>
-        <MonoText>{stock.percent_change}</MonoText>
+        <MonoText>${Number.parseFloat(stock.close).toFixed(1)}</MonoText>
+        <MonoText style={{ color: change > 0? "green" : "red" }}>{change > 0 ? "+" : ""}{change.toFixed(1)}%</MonoText>
       </View>
 
     </View>
